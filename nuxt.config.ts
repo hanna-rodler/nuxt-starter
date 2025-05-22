@@ -18,7 +18,7 @@ export default defineNuxtConfig({
         { name: 'msapplication-TileColor', content: '#096509' },
         { name: 'theme-color', content: '#ffffff' },
       ],
-      title: 'Hanna Julia Rodler',
+      title: 'Basic Nuxt Starter',
       htmlAttrs: {
         lang: 'de',
       },
@@ -55,8 +55,10 @@ export default defineNuxtConfig({
   },
   { rel: "manifest", href: "/site.webmanifest" },
 ],*/
+      // TODO: favicons
     },
   },
+  // runtime config example
   runtimeConfig: {
     public: {
       NUXT_ENV_CS_SECRET: process.env.CS_SECRET,
@@ -66,23 +68,28 @@ export default defineNuxtConfig({
       NUXT_ENV_DB_EXAMPLE: process.env.NUXT_MONGO_DB_EXAMPLE,
     },
   },
-  routeRules: {
-    '/': { prerender: true }, // static build site rendering
+  /*  routeRules: {
+      '/': { prerender: true }, // static build site rendering
 
-    // '/blog/**': { swr: 3600 }, // stale-while-revalidation (revalidation in background
+      // '/blog/!**': { swr: 3600 }, // stale-while-revalidation (revalidation in background
 
-    // ISR (Incremental Static Regeneration) - Nur bei bestimmten Hosting-Providern (z.B. Vercel)
-    // Ähnlich wie SWR, aber die Revalidierung kann auch durch externe Trigger ausgelöst werden
-    // '/news/**': { isr: 60 * 60 }, // Cache für 1 Stunde mit ISR
+      // ISR (Incremental Static Regeneration) - Nur bei bestimmten Hosting-Providern (z.B. Vercel)
+      // Ähnlich wie SWR, aber die Revalidierung kann auch durch externe Trigger ausgelöst werden
+      // '/news/!**': { isr: 60 * 60 }, // Cache für 1 Stunde mit ISR
 
-    // Seiten, die nicht gecacht werden sollen (z.B. Benutzer-spezifisch)
-    '/admin/**': { ssr: false, cache: false }, // Client-seitiges Rendern, kein Cache
-    '/dashboard': { ssr: false }, // Nur Client-seitig
+      // Seiten, die nicht gecacht werden sollen (z.B. Benutzer-spezifisch)
+      '/admin/!**': { ssr: false, cache: false }, // Client-seitiges Rendern, kein Cache
+      '/dashboard': { ssr: false }, // Nur Client-seitig
 
-    // '/assets/**': { headers: { 'Cache-Control': 'public, max-age=31536000, immutable' } },
-    // '/api/public-data': { headers: { 'Cache-Control': 'public, max-age=3600, stale-while-revalidate=60' } },
+      // '/assets/!**': { headers: { 'Cache-Control': 'public, max-age=31536000, immutable' } },
+      // '/api/public-data': { headers: { 'Cache-Control': 'public, max-age=3600, stale-while-revalidate=60' } },
+    },*/
+  postcss: {
+    plugins: {
+      tailwindcss: {},
+      autoprefixer: {},
+    },
   },
-  plugins: [],
   css: ['~/assets/css/fonts.css', '~/assets/css/main.css'],
   robots: {
     disallow: ['/example/*'],
@@ -102,16 +109,3 @@ export default defineNuxtConfig({
     },
   },
 });
-
-/*
-import { useStorage } from 'nitropack/runtime';
-export default defineEventHandler(async () => {
-  const myCache = useStorage('cache');
-  let data = await myCache.getItem('my-custom-data');
-  if (!data) {
-    data = { date: new Date(), title: 'My title', components: 'Test' }; // fetch
-    ;
-    await myCache.setItem('my-custom-data', data, { ttl: 60 * 60 }); // Cache für 1 Stunde
-  }
-  return data;
-});*/

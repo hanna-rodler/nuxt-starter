@@ -2,7 +2,7 @@
 // Ruft den gecachten Endpunkt auf
 import BaseButton from '../components/atoms/BaseButton.vue';
 
-const { data, pending, error, refresh } = await useFetch('/api/my-cached-endpoint');
+const { data, error, refresh, pending } = await useAsyncData('cached-data', () => $fetch('/api/my-cached-endpoint'));
 </script>
 
 <template>
@@ -14,7 +14,7 @@ const { data, pending, error, refresh } = await useFetch('/api/my-cached-endpoin
     <div v-else>
       <p>Daten: {{ data.mockData }}</p>
       <p>Abrufzeitpunkt (vom Server): {{ data.timestamp }}</p>
-      <BaseButton @click='refresh()'>Refresh (Cache ignorieren)</BaseButton>
+      <BaseButton class='mt-4' @click='refresh()'>Refresh</BaseButton>
     </div>
   </div>
 </template>
