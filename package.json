@@ -1,0 +1,40 @@
+{
+  "name": "nuxt-app",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare",
+    "lint": "eslint . && stylelint '**/*.css'",
+    "lint:fix": "eslint . --fix && stylelint '**/*.css' --fix",
+    "release": "npx standard-version --tag-prefix ''"
+  },
+  "dependencies": {
+    "@nuxt/eslint": "^1.4.1",
+    "vue": "^3.5.14",
+    "vue-router": "^4.5.1"
+  },
+  "devDependencies": {
+    "@iconify-json/heroicons": "^1.2.2",
+    "@nuxt/icon": "^1.13.0",
+    "@nuxt/image": "^1.10.0",
+    "@nuxtjs/robots": "^5.2.10",
+    "@nuxtjs/sitemap": "^7.3.0",
+    "@nuxtjs/tailwindcss": "^6.14.0",
+    "eslint": "^9.27.0",
+    "eslint-config-prettier": "^10.1.5",
+    "eslint-plugin-prettier": "^5.4.0",
+    "globals": "^16.1.0",
+    "nuxt": "^3.17.3",
+    "prettier": "^3.5.3",
+    "prettier-plugin-tailwindcss": "^0.6.11",
+    "stylelint": "^16.19.1",
+    "stylelint-config-recommended": "^16.0.0",
+    "stylelint-config-standard": "^38.0.0",
+    "stylelint-prettier": "^5.0.3",
+    "typescript": "^5.8.3"
+  }
+}

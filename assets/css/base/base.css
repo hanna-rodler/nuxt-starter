@@ -1,0 +1,7 @@
+html, body {
+    @apply h-full scroll-smooth text-gray-900;
+}
+
+svg {
+    @apply fill-current w-full h-full;
+}

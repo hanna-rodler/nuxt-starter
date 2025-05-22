@@ -1,0 +1,63 @@
+.button {
+    @apply min-w-4;
+}
+
+.button-primary {
+    @apply bg-primary text-white py-2 px-5 min-w-32 rounded-full font-semibold border-2 border-primary;
+}
+
+.button-primary:hover {
+    @apply text-primary bg-white;
+}
+
+.button-primary:focus {
+    @apply text-primary bg-white;
+}
+
+.button-secondary {
+    @apply bg-white text-secondary py-1 px-5 min-w-10 rounded-sm border-2 border-secondary text-sm;
+}
+
+.button-secondary:hover {
+    @apply text-white bg-secondary;
+}
+
+.button-secondary:focus {
+    @apply text-white bg-secondary font-semibold;
+}
+
+.button-accent {
+    @apply bg-accent text-white py-1 px-5 min-w-12 rounded-md border-2 border-accent;
+}
+
+.button-warning {
+    @apply border-error rounded-sm border-2 py-1 px-2 text-sm min-w-10;
+}
+
+.button-warning:hover {
+    @apply bg-error text-white;
+}
+
+.button-accent:hover {
+    @apply text-accent bg-white;
+}
+
+.button-success {
+    @apply bg-success text-white py-1 px-5 min-w-12 rounded-md border-2 border-success;
+}
+
+.button-success:hover {
+    @apply text-success bg-white;
+}
+
+.button-success:focus {
+    @apply text-success bg-white font-semibold;
+}
+
+.link-secondary {
+    @apply underline text-secondary;
+}
+
+.link-primary {
+    @apply underline cursor-pointer;
+}
